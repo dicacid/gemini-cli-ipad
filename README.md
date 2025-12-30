@@ -1,17 +1,19 @@
-# Gemini CLI for iPadOS
+# Gemini CLI for iPadOS (Improved)
 
 A lightweight, multimodal CLI for interacting with Google's Gemini API. Optimized for iPadOS terminal environments like **a-Shell**, **iSH**, or **Pythonista**.
 
 ## Features
 - **Multimodal Support**: Send text and images together.
+- **Streaming Responses**: Real-time output for long generations.
 - **Interactive Mode**: Chat with Gemini and maintain context.
-- **Easy Setup**: Simple configuration via `.env` file.
+- **Robust Parsing**: Improved regex-based parsing for image attachments in chat.
+- **Resource Management**: Proper handling of image files to prevent memory leaks.
 
 ## Installation
 
-1. **Clone the repository** (or copy the script):
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/gemini-cli-ipad.git
+   git clone https://github.com/dicacid/gemini-cli-ipad.git
    cd gemini-cli-ipad
    ```
 
@@ -28,9 +30,9 @@ A lightweight, multimodal CLI for interacting with Google's Gemini API. Optimize
 
 ## Usage
 
-### Single Prompt
+### Single Prompt (with Streaming)
 ```bash
-python gemini-cli.py "Explain this code snippet" --model gemini-2.0-flash
+python gemini-cli.py "Explain quantum computing" --stream
 ```
 
 ### Multimodal (Text + Image)
@@ -42,7 +44,7 @@ python gemini-cli.py "What is in this image?" --image photo.jpg
 ```bash
 python gemini-cli.py --interactive
 ```
-In interactive mode, you can also attach images using:
+In interactive mode, you can attach images using:
 `Your prompt --image path/to/image.jpg`
 
 ## Compatibility
